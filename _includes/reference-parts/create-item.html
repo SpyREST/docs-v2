@@ -12,7 +12,7 @@
     {% if include.route.schema.title == 'post' %}
       <h3>Example Request</h3>
       {% capture example_include %}reference-parts/examples/create-{{ include.route.schema.title }}-curl.html{% endcapture %}
-      <pre>{% include {{ example_include }} %}</pre>
+      {% include {{ example_include }} %}
     {% endif %}
 
 	</div>
