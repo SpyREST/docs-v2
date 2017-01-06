@@ -11,6 +11,14 @@
 
 		<h3>Example Request</h3>
 
-		<code>$ curl http://demo.wp-api.org/wp-json{{ include.route.nicename }}</code>
+
+
+    {% if include.route.schema.title == 'post' %}
+      {% capture example_include %}reference-parts/examples/list-{{ include.route.schema.title }}-curl.html{% endcapture %}
+      <pre>{% include {{ example_include }} %}</pre>
+		{% else %}
+      <code>$ curl http://demo.wp-api.org/wp-json{{ include.route.nicename }}</code>
+    {% endif %}
+
 	</div>
 </section>
