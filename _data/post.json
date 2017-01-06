@@ -43,7 +43,7 @@
             },
             "after": {
               "required": false,
-              "description": "Limit response to posts published after a given ISO8601 compliant date.",
+              "description": "Limit response to posts published after a given ISO8601 compliant date. <code>Example: after=2010-01-01T02:00:00-10:00</code>",
               "type": "string"
             },
             "author": {
@@ -51,7 +51,7 @@
               "default": [
 
               ],
-              "description": "Limit result set to posts assigned to specific authors.",
+              "description": "Limit result set to posts assigned to specific authors. <code>Example: author=1,2,...</code>",
               "type": "array",
               "items": {
                 "type": "integer"
@@ -62,7 +62,7 @@
               "default": [
 
               ],
-              "description": "Ensure result set excludes posts assigned to specific authors.",
+              "description": "Ensure result set excludes posts assigned to specific authors. <code>Example: author_exclude=1,2,...</code>",
               "type": "array",
               "items": {
                 "type": "integer"
@@ -70,7 +70,7 @@
             },
             "before": {
               "required": false,
-              "description": "Limit response to posts published before a given ISO8601 compliant date.",
+              "description": "Limit response to posts published before a given ISO8601 compliant date. <code>Example: before=2010-01-01T02:00:00-10:00</code>",
               "type": "string"
             },
             "exclude": {
@@ -89,7 +89,7 @@
               "default": [
 
               ],
-              "description": "Limit result set to specific IDs.",
+              "description": "Limit result set to specific IDs. Comma separated list of ids. <code>Example: include=id1,id2,...</code>",
               "type": "array",
               "items": {
                 "type": "integer"
@@ -97,7 +97,7 @@
             },
             "offset": {
               "required": false,
-              "description": "Offset the result set by a specific number of items.",
+              "description": "Offset the result set by a specific number of items. <code>Example: offset=10</code>",
               "type": "integer"
             },
             "order": {
@@ -107,7 +107,7 @@
                 "asc",
                 "desc"
               ],
-              "description": "Order sort attribute ascending or descending.",
+              "description": "Order sort attribute ascending or descending. <code>Example: order=asc</code>",
               "type": "string"
             },
             "orderby": {
@@ -121,7 +121,7 @@
                 "title",
                 "slug"
               ],
-              "description": "Sort collection by object attribute.",
+              "description": "Sort collection by object attribute. <code>Example: orderby=title</code>",
               "type": "string"
             },
             "slug": {
@@ -135,7 +135,7 @@
             "status": {
               "required": false,
               "default": "publish",
-              "description": "Limit result set to posts assigned one or more statuses.",
+              "description": "Limit result set to posts assigned one or more statuses. <code>Example: status=publish</code>",
               "type": "array",
               "items": {
                 "enum": [
@@ -179,7 +179,7 @@
               "default": [
 
               ],
-              "description": "Limit result set to all items that have the specified term assigned in the tags taxonomy.",
+              "description": "Limit result set to all items that have the specified term assigned in the tags taxonomy. <code>Example: tag=tagId1,tagId2,...</code>",
               "type": "array",
               "items": {
                 "type": "integer"
@@ -190,7 +190,7 @@
               "default": [
 
               ],
-              "description": "Limit result set to all items except those that have the specified term assigned in the tags taxonomy.",
+              "description": "Limit result set to all items except those that have the specified term assigned in the tags taxonomy. <code>Example: tags_exclude=tagId1,tagId2,...</code>",
               "type": "array",
               "items": {
                 "type": "integer"
@@ -198,7 +198,7 @@
             },
             "sticky": {
               "required": false,
-              "description": "Limit result set to items that are sticky.",
+              "description": "Limit result set to items that are sticky. <code>Example: sticky=true,...</code>",
               "type": "boolean"
             }
           }
@@ -210,17 +210,17 @@
           "args": {
             "date": {
               "required": false,
-              "description": "The date the object was published, in the site's timezone. <code>Example Value: '2010-01-01T02:00:00-10:00'</code>",
+              "description": "The date the object was published, in the site's timezone. <code>Example {'date':'2010-01-01T02:00:00-10:00'}</code>",
               "type": "string"
             },
             "date_gmt": {
               "required": false,
-              "description": "The date the object was published, as GMT.",
+              "description": "The date the object was published, as GMT. <code>Example {'date_gmt':'2010-01-01T02:00:00-10:00'}</code>",
               "type": "string"
             },
             "slug": {
               "required": false,
-              "description": "An alphanumeric identifier for the object unique to its type.",
+              "description": "An alphanumeric identifier for the object unique to its type. <code>Example {'slug':'custom_path'}</code>",
               "type": "string"
             },
             "status": {
@@ -232,7 +232,7 @@
                 "pending",
                 "private"
               ],
-              "description": "A named status for the object.",
+              "description": "A named status for the object. <code>Example {'status':'publish'}</code>",
               "type": "string"
             },
             "password": {
@@ -242,22 +242,22 @@
             },
             "title": {
               "required": false,
-              "description": "The title for the object.",
+              "description": "The title for the object. <code>Example {'title':'some title'}</code>",
               "type": "object"
             },
             "content": {
               "required": false,
-              "description": "The content for the object.",
+              "description": "The content for the object. <code>Example {'content':'some content'}</code>",
               "type": "object"
             },
             "author": {
               "required": false,
-              "description": "The ID for the author of the object.",
+              "description": "The ID for the author of the object. <code>Example {'author':1}</code>",
               "type": "integer"
             },
             "excerpt": {
               "required": false,
-              "description": "The excerpt for the object.",
+              "description": "The excerpt for the object. <code>Example {'excerpt':'example excerpt'}</code>",
               "type": "object"
             },
             "featured_media": {
@@ -339,7 +339,7 @@
         "type": "object",
         "properties": {
           "date": {
-            "description": "The date the object was published, in the site's timezone.",
+            "description": "The date the object was published, in the site's timezone. <code>Example '2010-01-01T02:00:00-10:00'</code>",
             "type": "string",
             "format": "date-time",
             "context": [
@@ -349,7 +349,7 @@
             ]
           },
           "date_gmt": {
-            "description": "The date the object was published, as GMT.",
+            "description": "The date the object was published, as GMT. <code>Example '2010-01-01T02:00:00-10:00'</code>",
             "type": "string",
             "format": "date-time",
             "context": [
@@ -386,7 +386,7 @@
             }
           },
           "id": {
-            "description": "Unique identifier for the object.",
+            "description": "Unique identifier for the object. Example: 1",
             "type": "integer",
             "context": [
               "view",
@@ -872,7 +872,7 @@
         "type": "object",
         "properties": {
           "date": {
-            "description": "The date the object was published, in the site's timezone.",
+            "description": "XX The date the object was published, in the site's timezone.",
             "type": "string",
             "format": "date-time",
             "context": [
@@ -1225,7 +1225,7 @@
     "type": "object",
     "properties": {
       "date": {
-        "description": "The date the object was published, in the site's timezone.",
+        "description": "The date the object was published, in the site's timezone. <code>Example: '2010-01-01T02:00:00-10:00'</code>",
         "type": "string",
         "format": "date-time",
         "context": [
@@ -1235,7 +1235,7 @@
         ]
       },
       "date_gmt": {
-        "description": "The date the object was published, as GMT.",
+        "description": "The date the object was published, as GMT. <code>Example: '2010-01-01T02:00:00-00:00'</code>",
         "type": "string",
         "format": "date-time",
         "context": [
@@ -1272,7 +1272,7 @@
         }
       },
       "id": {
-        "description": "Unique identifier for the object.",
+        "description": "Unique identifier for the object. <code>Example: 1</code>",
         "type": "integer",
         "context": [
           "view",
@@ -1282,7 +1282,7 @@
         "readonly": true
       },
       "link": {
-        "description": "URL to the object.",
+        "description": "URL to the object.  <code>Example: http://wp.spyrest.com/2016/04/07/the-api-documentation-experiement/</code>",
         "type": "string",
         "format": "uri",
         "context": [
@@ -1293,7 +1293,7 @@
         "readonly": true
       },
       "modified": {
-        "description": "The date the object was last modified, in the site's timezone.",
+        "description": "The date the object was last modified, in the site's timezone. <code>Example: '2016-12-20T18:03:56'</code>",
         "type": "string",
         "format": "date-time",
         "context": [
@@ -1303,7 +1303,7 @@
         "readonly": true
       },
       "modified_gmt": {
-        "description": "The date the object was last modified, as GMT.",
+        "description": "The date the object was last modified, as GMT. <code>Example: '2016-12-20T18:03:56'</code>",
         "type": "string",
         "format": "date-time",
         "context": [
@@ -1313,7 +1313,7 @@
         "readonly": true
       },
       "slug": {
-        "description": "An alphanumeric identifier for the object unique to its type.",
+        "description": "An alphanumeric identifier for the object unique to its type. <code> Example: the-api-documentation-experiement</code>",
         "type": "string",
         "context": [
           "view",
@@ -1322,7 +1322,7 @@
         ]
       },
       "status": {
-        "description": "A named status for the object.",
+        "description": "A named status for the object. <code> Example: publish</code>",
         "type": "string",
         "enum": [
           "publish",
@@ -1353,7 +1353,7 @@
         ]
       },
       "title": {
-        "description": "The title for the object.",
+        "description": "The title for the object. <code> Example: {\"rendered\":\"Hello world!\"}</code>",
         "type": "object",
         "context": [
           "view",
@@ -1381,7 +1381,7 @@
         }
       },
       "content": {
-        "description": "The content for the object.",
+        "description": "The content for the object. <code> {\"rendered\":\"&lt;p&gt;Welcome to WordPress. This is your first post. Edit or delete it, then start writing!&lt;/p&gt;\n\"}</code>",
         "type": "object",
         "context": [
           "view",
@@ -1417,7 +1417,7 @@
         }
       },
       "author": {
-        "description": "The ID for the author of the object.",
+        "description": "The ID for the author of the object. <code>Example: 1</code>",
         "type": "integer",
         "context": [
           "view",
@@ -1426,7 +1426,7 @@
         ]
       },
       "excerpt": {
-        "description": "The excerpt for the object.",
+        "description": "The excerpt for the object. <code>Example: {\"rendered\":\"&lt;p&gt;My excerpt&lt;p&gt;\\n\"}</code>",
         "type": "object",
         "context": [
           "view",
